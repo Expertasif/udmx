@@ -8,7 +8,7 @@ AVRDUDE = avrdude $(PROGRAMMER) -p $(DEVICE)
 
 # Choose your favorite programmer and interface above.
 
-COMPILE = avr-gcc -Wall -Os -Iusbdrv -I. -mmcu=$(DEVICE) #-DDEBUG_LEVEL=2
+COMPILE = avr-gcc -Wall -Os -Iusbdrv -I. -mmcu=$(DEVICE) -DF_CPU=$(CLOCK) #-DDEBUG_LEVEL=2
 # NEVER compile the final product with debugging! Any debug output will
 # distort timing so that the specs can't be met.
 
